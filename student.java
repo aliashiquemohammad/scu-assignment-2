@@ -6,29 +6,34 @@
  * @version (25/09/2023)
  * @github (https://github.com/aliashiquemohammad/scu-assignment-2) 
  */
-public class student
+public class Student
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private String studentFirstName;
+    private String studentLastName;
+    private String studentId;
+    private String studentFullName;
+    private double studentAssignment1Marks;
+    private double studentAssignment2Marks;
+    private double studentAssignment3Marks;
+    private double studentTotalMarks;
 
-    /**
-     * Constructor for objects of class student
-     */
-    public student()
-    {
-        // initialise instance variables
-        x = 0;
+    public Student(String firstName, String lastName, String studentId, double assignment1, double assignment2, double assignment3) {
+        this.studentFirstName = firstName;
+        this.studentLastName = lastName;
+        this.studentFullName = firstName + ' ' + lastName; 
+        this.studentId = studentId;
+        this.studentAssignment1Marks = assignment1;
+        this.studentAssignment2Marks = assignment2;
+        this.studentAssignment3Marks = assignment3;
+        this.studentTotalMarks = assignment1 + assignment2 + assignment3;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void printStudentDetails() {
+        System.out.println("Name: " + studentFullName);
+        System.out.println("Student ID: " + studentId);
+        System.out.println("Assignment 1: " + studentAssignment1Marks);
+        System.out.println("Assignment 2: " + studentAssignment2Marks);
+        System.out.println("Assignment 3: " + studentAssignment3Marks);
+        System.out.println("Total Marks: " + studentTotalMarks);
     }
 }
