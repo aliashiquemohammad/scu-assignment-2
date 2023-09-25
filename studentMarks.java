@@ -8,6 +8,8 @@
  */
 import java.io.*;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 public class studentMarks
 {
     // instance variables - replace the example below with your own
@@ -31,6 +33,7 @@ public class studentMarks
         
             //checking if CSV file exits
             if ( studentMarksFile.exists() ){
+                List<student> students = new ArrayList<>();
                 int counter = 0;
                 Scanner scanner = new Scanner( studentMarksFile );
                 while( scanner.hasNextLine() ){
