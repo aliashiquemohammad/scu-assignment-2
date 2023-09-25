@@ -89,7 +89,15 @@ public class StudentMarks
                     counter++;
                     
                 }
-                System.out.println(students.toString() );
+                for (Student student : students) {
+        
+                    student.printStudentDetails();
+        
+                }
+                //for ( int i =0; i <= students.size(); i++ ){
+                    //students.get(i).printStudentDetails();
+                //}
+                //System.out.println(students.toString() );
             }
             else{
                 System.out.println( "There is no any file as you have entered in the project folder" );
