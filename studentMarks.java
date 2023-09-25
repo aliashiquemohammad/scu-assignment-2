@@ -58,8 +58,7 @@ public class studentMarks
                             int assignment2 = Integer.parseInt(studentDetailsSplit[4].trim());
                             int assignment3 = Integer.parseInt(studentDetailsSplit[5].trim());
         
-                            //Student student = new Student(name, studentId, assignment1, assignment2, assignment3);
-                            //students.add(student);
+                            
                         }
                     }
                     
