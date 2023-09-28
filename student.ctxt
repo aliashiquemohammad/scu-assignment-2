@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Student
-comment0.text=\n\ The\ student\ class\ for\ student\ information\ from\ the\ file.\n\n\ @author\ (Mohammad\ Ashique\ Ali)\n\ @version\ (25/09/2023)\n\ @github\ (https\://github.com/aliashiquemohammad/scu-assignment-2)\ \n
+comment0.text=\n\ The\ student\ class\ for\ student\ information\ from\ the\ file.\n\n\ @author\ (Mohammad\ Ashique\ Ali)\n\ @version\ (29/09/2023)\n\ @github\ (https\://github.com/aliashiquemohammad/scu-assignment-2)\ \n
 comment1.params=firstName\ lastName\ studentId\ assignment1\ assignment2\ assignment3
 comment1.target=Student(java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ double,\ double)
 comment10.params=
