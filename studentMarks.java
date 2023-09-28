@@ -37,9 +37,9 @@ public class StudentMarks
                 fileNameInput.close();
                 List<Student> students = new ArrayList<>();
                 int counter = 0;
-                Scanner scanner = new Scanner( studentMarksFile );
-                while( scanner.hasNextLine() ){
-                    String filePerLine = scanner.nextLine();
+                Scanner marksFile = new Scanner( studentMarksFile );
+                while( marksFile.hasNextLine() ){
+                    String filePerLine = marksFile.nextLine();
                     //System.out.println( filePerLine );
                     
                     //ignoring the comment which starts with # or //
@@ -91,9 +91,24 @@ public class StudentMarks
                 }
                 for (Student student : students) {
         
-                    student.printStudentDetails();
+                    student.showStudentDetails();
         
                 }
+                
+                //if( students.isEmpty() ){
+                    marksFile.close();
+                    Scanner inputThreshold = new Scanner( System.in );
+                    System.out.println("Enter the Threshold Marks to list:");
+                    int userInputThreshold = inputThreshold.nextInt();
+                    for (Student student : students) {
+                        if (student.getStudentTotalMarks() < userInputThreshold ) {
+                            student.showStudentDetails();
+                        }
+                    }
+                    
+                    
+                //}
+                
                 //for ( int i =0; i <= students.size(); i++ ){
                     //students.get(i).printStudentDetails();
                 //}

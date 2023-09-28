@@ -1,0 +1,10 @@
+let threshold be an integer from the user input
+let students be an list of array
+let student be a student class
+for each student in students:
+    if student.totalMarks < threshold
+        Display student.getStudentTotalMarks
+   endif
+endfor 
+
+           
