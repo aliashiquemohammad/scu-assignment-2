@@ -11,31 +11,24 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
+import java.util.Comparator;
 public class StudentMarks
 {
-    // instance variables - replace the example below with your own
-    //private int x;
+    
 
-    /**
-     * Constructor for objects of class studentMarks
-     */
-    public StudentMarks()
-    {
-        
-    }
-
-    public static void main( String[] args ){
+    public static List<Student> readFileDataFromUser() {
+        List<Student> students = new ArrayList<>();
         Scanner fileNameInput = new Scanner(System.in);
         System.out.println("Enter the file name:");
         String fileName = fileNameInput.nextLine(); 
         try{
             //File studentMarksFile = new File( "prog5001_students_grade_2022.csv" );
             File studentMarksFile = new File(fileName + ".csv");
-        
+    
             //checking if CSV file exits
             if ( studentMarksFile.exists() ){
                 fileNameInput.close();
-                List<Student> students = new ArrayList<>();
+                
                 int counter = 0;
                 Scanner marksFile = new Scanner( studentMarksFile );
                 while( marksFile.hasNextLine() ){
@@ -59,7 +52,7 @@ public class StudentMarks
                         if ( studentDetailsSplit.length >= 4 ) {
                             String lastName = studentDetailsSplit[0].trim();
                             String firstName = studentDetailsSplit[1].trim();
-                            String studentId = studentDetailsSplit[2].trim();
+                            int studentId = Integer.parseInt(studentDetailsSplit[2].trim() );
                             double assignment1;
                             double assignment2;
                             double assignment3;
@@ -86,42 +79,72 @@ public class StudentMarks
                             
                         }
                     }
-                    counter++;
+                     counter++;
                     
                 }
-                for (Student student : students) {
-        
-                    student.showStudentDetails();
-        
-                }
                 
-                //if( students.isEmpty() ){
-                    marksFile.close();
-                    Scanner inputThreshold = new Scanner( System.in );
-                    System.out.println("Enter the Threshold Marks to list:");
-                    int userInputThreshold = inputThreshold.nextInt();
-                    for (Student student : students) {
-                        if (student.getStudentTotalMarks() < userInputThreshold ) {
-                            student.showStudentDetails();
-                        }
-                    }
                     
-                    
-                //}
-                
-                //for ( int i =0; i <= students.size(); i++ ){
-                    //students.get(i).printStudentDetails();
-                //}
-                //System.out.println(students.toString() );
-            }
-            else{
+            }else{
                 System.out.println( "There is no any file as you have entered in the project folder" );
             }
-        }
-        catch( FileNotFoundException e){
-            System.out.println( "There is some error." );
+        }catch( FileNotFoundException e){
+            System.out.println( "There is some error while processing your file." );
             e.printStackTrace();
         }
+        return students;
+    }
+    
+    public void studentTopFiveTopAndButtom(List<Student> students){
+        int n = students.size();
+        boolean swapped;
+        swapped = false;
+        /**
+         * Sorting with bubble sort with descending order
+         */
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (students.get(j).getStudentTotalMarks() < students.get(j+1).getStudentTotalMarks() ) {
+                    // Swap list[j] and list[j+1]
+                    Student temp = students.get(j);
+                    students.set(j, students.get(j + 1));
+                    students.set(j + 1, temp);
+                    swapped = true;
+                }
+            }
+            
+        }
         
+        if( !swapped ){
+            System.out.println( "There was error on processing your request" );
+        }else{
+            System.out.println("Top 5 Students:");
+            for (int i = 0; i < 5 && i < students.size(); i++) {
+                students.get(i).showStudentDetails();
+            }
+        
+            System.out.println("Bottom 5 Students:");
+            //int n = students.size();
+            for (int i = n - 1; i >= n - 5 && i >= 0; i--) {
+                students.get(i).showStudentDetails();
+            }
+        }
+    }
+    
+    public void showStudentsBelowThreshold( List<Student> students, int userInputThreshold ){
+        
+        
+        for (Student student : students) {
+            if (student.getStudentTotalMarks() < userInputThreshold ) {
+                student.showStudentDetails();
+            }
+        }
+    }
+
+    public void showAllStudentDetails( List<Student> students ){
+        for (Student student : students) {
+    
+                student.showStudentDetails();
+    
+            }
     }
 }

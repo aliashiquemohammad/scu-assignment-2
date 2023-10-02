@@ -10,14 +10,14 @@ public class Student
 {
     private String studentFirstName;
     private String studentLastName;
-    private String studentId;
+    private int studentId;
     private String studentFullName;
     private double studentAssignment1Marks;
     private double studentAssignment2Marks;
     private double studentAssignment3Marks;
     private double studentTotalMarks;
     
-    public Student(String firstName, String lastName, String studentId, double assignment1, double assignment2, double assignment3) {
+    public Student(String firstName, String lastName, int studentId, double assignment1, double assignment2, double assignment3) {
         this.studentFirstName = firstName;
         this.studentLastName = lastName;
         this.studentFullName = firstName + ' ' + lastName; 
@@ -57,7 +57,7 @@ public class Student
     /**
      * Set the ID of the student
      */
-    public void setStudentStudentID( String studentID){
+    public void setStudentStudentID( int studentID){
         studentId = studentID;
     }
     
@@ -93,7 +93,7 @@ public class Student
     /**
      * Get the ID of the student
      */
-    public String getStudentStudentID(){
+    public int getStudentID(){
         return studentId;
     }
     
