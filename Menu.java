@@ -1,9 +1,9 @@
-
 /**
- * Write a description of class Menu here.
+ * The class for Menu for the user to run the program.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Mohammad Ashique Ali)
+ * @version (02/10/2023)
+ * @github (https://github.com/aliashiquemohammad/scu-assignment-2) 
  */
 import java.io.*;
 import java.util.Scanner;
@@ -35,16 +35,33 @@ public class Menu
                     students = studentMarks.readFileDataFromUser();
                     break;
                 case 2:
-                    studentMarks.showAllStudentDetails( students );
+                    if( ! students.isEmpty() ){
+                        studentMarks.showAllStudentDetails( students );
+                    }else{
+                        System.out.println( "----------------------------------------------");
+                        System.out.println( "Run Read File of choice 1 first." );
+                        System.out.println( "----------------------------------------------");
+                    }
                     break;
                 case 3:
-                    //Scanner inputThreshold = new Scanner( System.in );
-                    System.out.println("Enter the Threshold Marks to list:");
-                    int userInputThreshold = scanner.nextInt();
-                    studentMarks.showStudentsBelowThreshold(students, userInputThreshold);
+                    if( ! students.isEmpty() ){
+                        System.out.println("Enter the Threshold Marks to list:");
+                        int userInputThreshold = scanner.nextInt();
+                        studentMarks.showStudentsBelowThreshold(students, userInputThreshold);
+                    }else{
+                        System.out.println( "----------------------------------------------");
+                        System.out.println( "Run Read File of choice 1 first." );
+                        System.out.println( "----------------------------------------------");
+                    }
                     break;
                 case 4:
-                    studentMarks.studentTopFiveTopAndButtom(students);
+                    if( ! students.isEmpty() ){
+                        studentMarks.studentTopFiveTopAndButtom(students);
+                    }else{
+                        System.out.println( "----------------------------------------------");
+                        System.out.println( "Run Read File of choice 1 first." );
+                        System.out.println( "----------------------------------------------");
+                    }
                     break;
                 case 5:
                     System.out.println("Exiting program.");

@@ -1,0 +1,11 @@
+let students be an list of array
+sort students by studentTotalMarks in descending order
+Display "Top 5 Students:"
+For i = 0 To 4:
+    students[i].showStudentDetails()
+Endfor
+Display "Bottom 5 Students:"
+For i = size(students) - 1 Down To size(students) - 5:
+    students[i].showStudentDetails()
+Endfor
+           

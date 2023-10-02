@@ -3,7 +3,7 @@
  * The student class for student information from the file.
  *
  * @author (Mohammad Ashique Ali)
- * @version (29/09/2023)
+ * @version (02/10/2023)
  * @github (https://github.com/aliashiquemohammad/scu-assignment-2) 
  */
 public class Student

@@ -2,10 +2,14 @@
 comment0.target=StudentMarks
 comment1.params=
 comment1.target=java.util.List\ readFileDataFromUser()
+comment1.text=\n\ Read\ the\ file\ form\ the\ user\ input\ and\ store\ those\ values\ to\ the\ student\ class\n
 comment2.params=students
 comment2.target=void\ studentTopFiveTopAndButtom(java.util.List)
+comment2.text=\n\ Show\ the\ Top\ Five\ Student\ from\ Top\ and\ Bottom\n
 comment3.params=students\ userInputThreshold
 comment3.target=void\ showStudentsBelowThreshold(java.util.List,\ int)
+comment3.text=\n\ Show\ students\ below\ the\ input\ threshold\n
 comment4.params=students
 comment4.target=void\ showAllStudentDetails(java.util.List)
+comment4.text=\n\ Show\ all\ the\ students\ from\ the\ file\n
 numComments=5
